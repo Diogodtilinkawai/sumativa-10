@@ -1,0 +1,21 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Pokedex
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+<ion-list>
+  <ng-container *ngIf="pokemones.length; else loading">
+  <ion-item *ngFor="let p of pokemones">
+    <ion-label>
+      <h2>{{p.name}}</h2>
+      <p>{{p.url}}</p>
+    </ion-label>
+  </ion-item>
+  </ng-container>
+</ion-list>
+</ion-content>
+<ng-template #loading>
+  <ion-spinner></ion-spinner>
