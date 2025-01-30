@@ -8,10 +8,10 @@
 <ion-content>
 <ion-list>
   <ng-container *ngIf="pokemones.length; else loading">
-  <ion-item *ngFor="let p of pokemones">
+  <ion-item *ngFor="let p of pokemones" (click)="verDetalle(p.url)">
     <ion-label>
       <h2>{{p.name}}</h2>
-      <p>{{p.url}}</p>
+      <!-- <ion-button (click)="verDetalle(p.url)">Ver detalle</ion-button> -->
     </ion-label>
   </ion-item>
   </ng-container>
