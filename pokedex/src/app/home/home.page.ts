@@ -17,13 +17,24 @@ export class HomePage {
       console.log(data.results);
     });
   }
+  obtenerId(url: any)
+  {
+   const regex = /\/(\d+)\//;
+    const match = url.match(regex);
+    if (match)
+    {
+      return match[1];
+    }
+    else
+    {
+      return '';
+    }
+  }
   verDetalle(url: string)
   {
-    // this.router.navigate(['/detalle']);
+    const id=this.obtenerId(url);
     console.log(url);
-    this.pokeservice.pokemones().subscribe((data: any) => {
-      console.log(data.results.find((element: { url: string; }) => element.url === url));
-    });
-    // return url;
+    console.log(id);
+    this.router.navigate(['/detalle',this.obtenerId(url)]);
   }
 }

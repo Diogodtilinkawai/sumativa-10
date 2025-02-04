@@ -11,3 +11,4 @@ export class PokeapiService {
     return this.http.get(this.apiUrl);
   }
 }
+ 
